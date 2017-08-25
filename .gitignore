@@ -1,0 +1,21 @@
+### Ignore JetBrains IntelliJ IDE specific extensions
+.idea/
+*.ipr
+*.iml
+*.iws
+
+### Ignore Eclipse project files
+target/
+bin/
+.metadata
+.settings
+.project
+.classpath
+.springBeans
+.checkstyle
+test-output
+*.log
+
+### Ignore specific folders for current project
+target
+build
