@@ -10,9 +10,4 @@
 
 ## To see Allure report:
 
-Just open `info-portal-auto\target\site\allure-maven-plugin.html` file in firefox browser.
-
-Or do the next:
-
-1. run `mvn jetty:run`
-2. open `http://localhost:8080` in your browser
+Just open `info-portal-auto\target\site\allure-maven-plugin.html` file in ***firefox*** browser.
