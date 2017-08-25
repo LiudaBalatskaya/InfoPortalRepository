@@ -1,6 +1,6 @@
 # Info Portal Autotests
 
-## To run tests and :
+## To run tests:
 
 * run `mvn clean test`
 
