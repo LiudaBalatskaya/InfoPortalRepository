@@ -11,12 +11,12 @@ public class InitialInfoPortalTest {
 
     @Test
     public void initTestMethod() throws Exception {
-        System.setProperty("webdriver.gecko.driver", "C:\\_WebDriver\\geckodriver-v0.18.0-win64\\geckodriver.exe");
-        Configuration.browser = "marionette";
+        //        System.setProperty("webdriver.gecko.driver", "C:\\_WebDriver\\geckodriver-v0.18.0-win64\\geckodriver.exe");
+        //        Configuration.browser = "marionette";
 
 
-//        System.setProperty("webdriver.chrome.driver", "C:\\_WebDriver\\chrome_2.31\\chromedriver.exe");
-//        Configuration.browser = "chrome";
+        System.setProperty("webdriver.chrome.driver", "C:\\_WebDriver\\chrome_2.31\\chromedriver.exe");
+        Configuration.browser = "chrome";
 
 
         open("http://info.issoft.by");
