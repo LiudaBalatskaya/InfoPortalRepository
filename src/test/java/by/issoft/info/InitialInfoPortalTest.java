@@ -14,10 +14,10 @@ public class InitialInfoPortalTest {
         //        System.setProperty("webdriver.gecko.driver", "C:\\_WebDriver\\geckodriver-v0.18.0-win64\\geckodriver.exe");
         //        Configuration.browser = "marionette";
 
+        //        System.setProperty("webdriver.chrome.driver", "C:\\_WebDriver\\chrome_2.31\\chromedriver.exe");
+        //        Configuration.browser = "chrome";
 
-        System.setProperty("webdriver.chrome.driver", "C:\\_WebDriver\\chrome_2.31\\chromedriver.exe");
-        Configuration.browser = "chrome";
-
+        Configuration.browser = "by.issoft.info.wd.ChromeRemoteWebDriverProvider";
 
         open("http://info.issoft.by");
         $(By.xpath("//a[text()='О компании']")).click();
