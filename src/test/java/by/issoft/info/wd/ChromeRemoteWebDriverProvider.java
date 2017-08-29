@@ -13,7 +13,7 @@ public class ChromeRemoteWebDriverProvider implements WebDriverProvider {
     public WebDriver createDriver(DesiredCapabilities capabilities) {
         URL url = null;
         try {
-            url = new URL("http://localhost:4444/wd/hub");
+            url = new URL("http://localhost:4447/wd/hub");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

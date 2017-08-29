@@ -5,8 +5,8 @@ echo "========================================"
 
 set -e
 
-chrome=grd_selenium_chrome
-firefox=grd_selenium_firefox
+chrome=info_portal_grd_selenium_chrome
+firefox=info_portal_grd_selenium_firefox
 chrome_image=selenium/standalone-chrome:3.4.0
 ff_image=selenium/standalone-firefox:3.4.0
 

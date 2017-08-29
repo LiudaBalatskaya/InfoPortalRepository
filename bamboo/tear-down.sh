@@ -5,7 +5,7 @@ echo "========================================"
 
 set -e
 
-all=$(docker ps -a -q --no-trunc --filter name=^/grd_selenium)
+all=$(docker ps -a -q --no-trunc -fname=info_portal_grd_selenium)
 
 if [ "${all}" ]; then
   docker stop ${all}
