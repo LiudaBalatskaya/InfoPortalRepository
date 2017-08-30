@@ -16,9 +16,16 @@ public class ExperimentalInfoPortalTest {
         WdConfig.setUp();
     }
 
+
     @Test
     public void experimentalTestMethod() {
         HomePage homePage = open("http://info.issoft.by", HomePage.class);
         $(By.xpath("//a[text()='О компании']")).click();
+    }
+
+
+    @Test
+    public void experiment2() {
+        HomePage homePage = open("http://info.issoft.by", HomePage.class);
     }
 }
