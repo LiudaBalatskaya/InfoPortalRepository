@@ -11,7 +11,7 @@ import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
 
-public class InfoPortalPage {
+public class InfoPortalPageTest {
 
     @Rule
     public ErrorCollector collector = new ErrorCollector();
