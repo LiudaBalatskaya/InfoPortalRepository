@@ -16,9 +16,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class InfoPortalPageTest {
+public class HomePageTest {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(InfoPortalPageTest.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(HomePageTest.class);
 
     @Rule
     public ErrorCollector collector = new ErrorCollector();
@@ -31,10 +31,14 @@ public class InfoPortalPageTest {
 
 
     @Test
-    public void infoPortalPageHeader() {
+    public void CINFP350PageHeader() {
         LOGGER.info("Open Home page");
         HomePage homePage = open(HomePage.getUrl(), HomePage.class);
+
+
+        LOGGER.info("Open Home page");
         collector.checkThat("ISSoft Logo is absent", homePage.getLogo().isDisplayed(), is(true));
+
 
         LOGGER.info("Verify Issoft-logo img");
         String actualPageTitle = title();
@@ -43,12 +47,14 @@ public class InfoPortalPageTest {
                 "Expectation is '" + expectationPageTitle + "'. " +
                 "Actual is '" + actualPageTitle + "'.", actualPageTitle, is(expectationPageTitle));
 
+
         LOGGER.info("Verify 'About company' ('О компании') navigation link");
         homePage.getAboutCompanyMenu().click();
         String expectedUrl = AboutPage.getUrl();
         String actualUrl = url();
         collector.checkThat("'About company' ('О компании') menu link is wrong. " +
                 AboutPage.class.getSimpleName() + " is not open.", actualUrl, is(expectedUrl));
+
 
         //        LOGGER.info("Verify 'News' ('новости') navigation link");
         //        open(HomePage.PAGE_URL, HomePage.class);
