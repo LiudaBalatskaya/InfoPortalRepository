@@ -43,19 +43,19 @@ public class InfoPortalPageTest {
                 "Expectation is '" + expectationPageTitle + "'. " +
                 "Actual is '" + actualPageTitle + "'.", actualPageTitle, is(expectationPageTitle));
 
-        LOGGER.info("Verify 'О компании' navigation link");
+        LOGGER.info("Verify 'About company' ('О компании') navigation link");
         homePage.getAboutCompanyMenu().click();
         String expectedUrl = AboutPage.getUrl();
         String actualUrl = url();
-        collector.checkThat("'О компании' menu link is wrong. " +
+        collector.checkThat("'About company' ('О компании') menu link is wrong. " +
                 AboutPage.class.getSimpleName() + " is not open.", actualUrl, is(expectedUrl));
 
-        //        LOGGER.info("Verify 'новости' navigation link");
+        //        LOGGER.info("Verify 'News' ('новости') navigation link");
         //        open(HomePage.PAGE_URL, HomePage.class);
         //        homePage.getAboutCompanyMenu().click();
         //        String expectedUrl = AboutPage.PAGE_URL;
         //        String actualUrl = url();
-        //        collector.checkThat("'О компании' menu link is wrong. " +
+        //        collector.checkThat("'About company' ('О компании') menu link is wrong. " +
         //                AboutPage.class.getSimpleName() + " is not open.", actualUrl, is(expectedUrl));
 
 
