@@ -17,11 +17,22 @@
   <description>This project test Info Portal</description>
 
   <dependencies>
+    <!-- Reporter -->
     <dependency>
       <groupId>ru.yandex.qatools.allure</groupId>
       <artifactId>allure-junit-adaptor</artifactId>
       <version>${allure.version}</version>
     </dependency>
+
+    <!-- Logger -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.7.25</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Framework -->
     <dependency>
       <groupId>com.codeborne</groupId>
       <artifactId>selenide</artifactId>
