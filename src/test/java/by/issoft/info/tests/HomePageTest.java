@@ -31,12 +31,12 @@ public class HomePageTest {
 
 
     @Test
-    public void CINFP350PageHeader() {
+    public void cinfp350PageHeader() {
         LOGGER.info("Open Home page");
         HomePage homePage = open(HomePage.getUrl(), HomePage.class);
 
 
-        LOGGER.info("Open Home page");
+        LOGGER.info("Verify Issoft-logo img");
         collector.checkThat("ISSoft Logo is absent", homePage.getLogo().isDisplayed(), is(true));
 
 
@@ -70,7 +70,7 @@ public class HomePageTest {
 
 
     @Test
-    public void homeCards() {
+    public void cinfp356HomeCards() {
 
     }
 }
