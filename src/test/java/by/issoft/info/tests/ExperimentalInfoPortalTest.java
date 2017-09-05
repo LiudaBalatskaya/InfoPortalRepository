@@ -3,25 +3,16 @@ package by.issoft.info.tests;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-import by.issoft.info.config.Configurator;
 import by.issoft.info.po.HomePage;
 import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class ExperimentalInfoPortalTest {
+public class ExperimentalInfoPortalTest extends BaseTest {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(HomePageTest.class);
-
-
-    @BeforeClass
-    public static void setUp() {
-        Configurator.setUp();
-    }
-
 
     @Test
     public void experimentalTestMethod() {
