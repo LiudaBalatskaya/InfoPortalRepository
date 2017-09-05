@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 public class HomePage {
     private static final String URL = "/";
 
-    private static final By LOGO = By.xpath("//img[@class='issoft-LOGO']");
+    private static final By LOGO = By.xpath("//img[@class='issoft-logo']");
     private static final By ABOUT_COMPANY_MENU = By.xpath("//a[text()='О компании']");
 
 

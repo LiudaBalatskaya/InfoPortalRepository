@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestsSuite0001" verbose="5" data-provider-thread-count="1">
+  <test name="Test0001">
+    <classes>
+      <class name="by.issoft.info.tests.HomePageTest"/>
+    </classes>
+  </test>
+  <test name="Test0002experiment">
+    <classes>
+      <class name="by.issoft.info.tests.ExperimentalInfoPortalTest"/>
+    </classes>
+  </test>
+</suite>

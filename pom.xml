@@ -21,7 +21,7 @@
     <!-- Reporter -->
     <dependency>
       <groupId>ru.yandex.qatools.allure</groupId>
-      <artifactId>allure-junit-adaptor</artifactId>
+      <artifactId>allure-testng-adaptor</artifactId>
       <version>${allure.version}</version>
     </dependency>
 
@@ -38,6 +38,12 @@
       <groupId>com.codeborne</groupId>
       <artifactId>selenide</artifactId>
       <version>4.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.10</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -66,14 +72,16 @@
           <testFailureIgnore>false</testFailureIgnore>
           <argLine>
             -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
-            -DBUILD_URL=${BUILD_URL}
           </argLine>
           <properties>
             <property>
               <name>listener</name>
-              <value>ru.yandex.qatools.allure.junit.AllureRunListener</value>
+              <value>ru.yandex.qatools.allure.testng.AllureTestListener</value>
             </property>
           </properties>
+          <suiteXmlFiles>
+            <suiteXmlFile>./src/test/resources/testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
         </configuration>
         <dependencies>
           <dependency>
