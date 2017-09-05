@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 import by.issoft.info.po.HomePage;
 import by.issoft.info.tests.BaseTest;
-import by.issoft.info.tests.homepage.CINFP350PageHeader;
+import by.issoft.info.tests.homepage.CINFP350HeaderComposition;
 import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ import org.testng.asserts.SoftAssert;
 
 public class ExperimentalInfoPortalTest extends BaseTest {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(CINFP350PageHeader.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(CINFP350HeaderComposition.class);
 
     @Test
     public void experimentalTestMethod() {

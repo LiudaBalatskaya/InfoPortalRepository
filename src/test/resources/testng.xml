@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Regression" verbose="5" data-provider-thread-count="1">
-  <test name="Test0001 Home Page">
+  <test name="Home Page">
     <classes>
-      <class name="by.issoft.info.tests.homepage.CINFP350PageHeader"/>
+      <class name="by.issoft.info.tests.homepage.CINFP350HeaderComposition"/>
+      <class name="by.issoft.info.tests.homepage.CINFP393HeaderNavigationLinks"/>
     </classes>
   </test>
-  <test name="Test0002 !!! Experiment">
+  <test name="Experiment !!! Experiment">
     <classes>
       <class name="by.issoft.info.tests.experiment.ExperimentalInfoPortalTest"/>
     </classes>
