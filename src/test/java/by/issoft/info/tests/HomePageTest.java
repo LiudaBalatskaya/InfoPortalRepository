@@ -3,25 +3,19 @@ package by.issoft.info.tests;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.title;
 import static com.codeborne.selenide.WebDriverRunner.url;
-import static org.hamcrest.core.Is.is;
 
 import by.issoft.info.config.Configurator;
 import by.issoft.info.po.AboutPage;
 import by.issoft.info.po.HomePage;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ErrorCollector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class HomePageTest {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(HomePageTest.class);
-
-    @Rule
-    public ErrorCollector collector = new ErrorCollector();
 
 
     @BeforeClass
@@ -32,28 +26,30 @@ public class HomePageTest {
 
     @Test
     public void cinfp350PageHeader() {
+        SoftAssert softAssert = new SoftAssert();
         LOGGER.info("Open Home page");
         HomePage homePage = open(HomePage.getUrl(), HomePage.class);
 
 
         LOGGER.info("Verify Issoft-logo img");
-        collector.checkThat("ISSoft Logo is absent", homePage.getLogo().isDisplayed(), is(true));
+        softAssert.assertTrue(homePage.getLogo().isDisplayed(), "ISSoft Logo is absent");
 
 
-        LOGGER.info("Verify Issoft-logo img");
+        LOGGER.info("Verify title");
         String actualPageTitle = title();
         String expectationPageTitle = "InfoPortal";
-        collector.checkThat("Wrong " + HomePage.class.getSimpleName() + " title. " +
-                "Expectation is '" + expectationPageTitle + "'. " +
-                "Actual is '" + actualPageTitle + "'.", actualPageTitle, is(expectationPageTitle));
+        softAssert.assertEquals(actualPageTitle, expectationPageTitle,
+                "Wrong " + HomePage.class.getSimpleName() + " title. " +
+                        "Expectation is '" + expectationPageTitle + "'. " +
+                        "Actual is '" + actualPageTitle + "'.");
 
 
         LOGGER.info("Verify 'About company' ('О компании') navigation link");
         homePage.getAboutCompanyMenu().click();
         String expectedUrl = AboutPage.getUrl();
         String actualUrl = url();
-        collector.checkThat("'About company' ('О компании') menu link is wrong. " +
-                AboutPage.class.getSimpleName() + " is not open.", actualUrl, is(expectedUrl));
+        softAssert.assertEquals(actualUrl, expectedUrl, "'About company' ('О компании') menu link is wrong. " +
+                AboutPage.class.getSimpleName() + " is not open.");
 
 
         //        LOGGER.info("Verify 'News' ('новости') navigation link");
@@ -65,12 +61,13 @@ public class HomePageTest {
         //                AboutPage.class.getSimpleName() + " is not open.", actualUrl, is(expectedUrl));
 
 
-        collector.checkThat("EXPERIMENT FAILED ", true, is(false));
+        softAssert.assertTrue(false, "EXPERIMENT FAILED ");
+        softAssert.assertAll();
     }
 
 
     @Test
     public void cinfp356HomeCards() {
-
+        LOGGER.info("222222222222222222");
     }
 }
