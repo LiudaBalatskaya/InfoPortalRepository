@@ -1,4 +1,4 @@
-package by.issoft.info.tests;
+package by.issoft.info.tests.homepage;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
@@ -7,14 +7,15 @@ import static com.codeborne.selenide.WebDriverRunner.url;
 
 import by.issoft.info.po.AboutPage;
 import by.issoft.info.po.HomePage;
+import by.issoft.info.tests.BaseTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class HomePageTest extends BaseTest {
+public class CINFP350PageHeader extends BaseTest {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(HomePageTest.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(CINFP350PageHeader.class);
 
 
     @Test
