@@ -10,6 +10,7 @@
 
   <properties>
     <allure.version>1.4.23</allure.version>
+    <aspectj.version>1.8.9</aspectj.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -64,7 +65,7 @@
         <configuration>
           <testFailureIgnore>false</testFailureIgnore>
           <argLine>
-            -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.8.9/aspectjweaver-1.8.9.jar
+            -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
             -DBUILD_URL=${BUILD_URL}
           </argLine>
           <properties>
@@ -78,7 +79,7 @@
           <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.8.9</version>
+            <version>${aspectj.version}</version>
           </dependency>
         </dependencies>
       </plugin>
