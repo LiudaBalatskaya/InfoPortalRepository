@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Regression" verbose="5" data-provider-thread-count="1">
-  <test name="Home Page">
+  <test name="CINFP-350 Header composition">
     <classes>
-      <class name="by.issoft.info.tests.homepage.CINFP350HeaderComposition"/>
-      <class name="by.issoft.info.tests.homepage.CINFP393HeaderNavigationLinks"/>
+      <class name="by.issoft.info.tests.CINFP350HeaderComposition"/>
+    </classes>
+  </test>
+  <test name="CINFP-393 Header navigation links">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP393HeaderNavigationLinks"/>
     </classes>
   </test>
   <test name="Experiment !!! Experiment">
     <classes>
-      <class name="by.issoft.info.tests.experiment.ExperimentalInfoPortalTest"/>
+      <class name="by.issoft.info.tests.ExperimentalInfoPortalTest"/>
     </classes>
   </test>
 </suite>

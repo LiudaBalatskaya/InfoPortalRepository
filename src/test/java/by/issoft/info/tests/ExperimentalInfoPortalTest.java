@@ -1,11 +1,9 @@
-package by.issoft.info.tests.experiment;
+package by.issoft.info.tests;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 import by.issoft.info.po.HomePage;
-import by.issoft.info.tests.BaseTest;
-import by.issoft.info.tests.homepage.CINFP350HeaderComposition;
 import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

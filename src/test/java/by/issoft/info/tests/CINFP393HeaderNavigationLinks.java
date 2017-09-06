@@ -1,4 +1,4 @@
-package by.issoft.info.tests.homepage;
+package by.issoft.info.tests;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
@@ -7,7 +7,6 @@ import static org.testng.Assert.assertEquals;
 
 import by.issoft.info.po.AboutPage;
 import by.issoft.info.po.HomePage;
-import by.issoft.info.tests.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

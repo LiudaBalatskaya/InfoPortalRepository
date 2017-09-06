@@ -1,10 +1,9 @@
-package by.issoft.info.tests.homepage;
+package by.issoft.info.tests;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.title;
 
 import by.issoft.info.po.HomePage;
-import by.issoft.info.tests.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
