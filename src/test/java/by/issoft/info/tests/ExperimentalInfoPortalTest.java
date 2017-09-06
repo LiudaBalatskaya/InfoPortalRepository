@@ -12,7 +12,7 @@ import org.testng.asserts.SoftAssert;
 
 public class ExperimentalInfoPortalTest extends BaseTest {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(HomePageTest.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(CINFP350HeaderComposition.class);
 
     @Test
     public void experimentalTestMethod() {

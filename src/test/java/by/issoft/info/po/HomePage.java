@@ -8,12 +8,18 @@ import org.openqa.selenium.By;
 public class HomePage {
     public static final String URL = "/";
 
-    private static final By LOGO = By.xpath("//img[@class='issoft-logo']");
+    private static final By ISSOFT_LOGO = By.xpath("//img[@class='issoft-logo']");
+    private static final By COHERENT_LOGO = By.xpath("//img[@class='issoft-coherent-logo']");
     private static final By ABOUT_COMPANY_MENU = By.xpath("//a[text()='О компании']");
 
 
-    public SelenideElement getLogo() {
-        return $(LOGO);
+    public SelenideElement getISsoftLogo() {
+        return $(ISSOFT_LOGO);
+    }
+
+
+    public SelenideElement getCoherentLogo() {
+        return $(COHERENT_LOGO);
     }
 
 
