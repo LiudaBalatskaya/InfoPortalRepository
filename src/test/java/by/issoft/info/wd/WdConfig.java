@@ -1,20 +1,49 @@
 package by.issoft.info.wd;
 
+import by.issoft.info.config.AutotestConfigException;
+import by.issoft.info.config.Prop;
+import by.issoft.info.config.PropKey;
 import com.codeborne.selenide.Configuration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class WdConfig {
+    private final static Logger LOGGER = LoggerFactory.getLogger(WdConfig.class);
+
 
     public static void setUp() {
-        // move configuration in special class before all test or use
-        // system property "-Dselenide.browser=chrome" and "marionette"
-        // put XXXXXXdriver.exe files into
+        LOGGER.info("-----------------------------------------");
+        String browser = Prop.getProp(PropKey.BROWSER);
 
-        //        System.setProperty("webdriver.gecko.driver", ".\\driver\\geckodriver-v0.18.0-win64\\geckodriver.exe");
-        //        Configuration.browser = "marionette";
+        switch (browser) {
+            case "local_chrome":
+                LOGGER.info("Starting local chrome browser");
+                if (System.getProperty("webdriver.chrome.driver") == null) {
+                    System.setProperty("webdriver.chrome.driver", Prop.getProp(PropKey.WEBDRIVER_CHROME_DRIVER));
+                }
+                Configuration.browser = "chrome";
+                break;
 
-        System.setProperty("webdriver.chrome.driver", ".\\driver\\chrome_2.31\\chromedriver.exe");
-        Configuration.browser = "chrome"; // Compatible with browser Version 60.0.3112.101
+            case "local_firefox":
+                LOGGER.info("Starting local firefox browser");
+                if (System.getProperty("webdriver.gecko.driver") == null) {
+                    System.setProperty("webdriver.gecko.driver", Prop.getProp(PropKey.WEBDRIVER_GECKO_DRIVER));
+                }
+                Configuration.browser = "marionette";
+                break;
 
-        //        Configuration.browser = "by.issoft.info.wd.ChromeRemoteWebDriverProvider";
+            case "remote_chrome":
+                LOGGER.info("Starting remote chrome browser");
+                Configuration.browser = "by.issoft.info.wd.ChromeRemoteWebDriverProvider";
+                break;
+
+            case "remote_firefox":
+                LOGGER.info("Starting remote firefox browser");
+                Configuration.browser = "by.issoft.info.wd.FirefoxRemoteWebDriverProvider";
+                break;
+
+            default:
+                throw new AutotestConfigException("'" + browser + "' browser does not support");
+        }
     }
 }

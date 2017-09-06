@@ -11,17 +11,17 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class ChromeRemoteWebDriverProvider implements WebDriverProvider {
+public class FirefoxRemoteWebDriverProvider implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities capabilities) {
         URL url;
         try {
-            url = new URL(Prop.getProp(PropKey.WEBDRIVER_CHROME_REMOTE_HUB));
+            url = new URL(Prop.getProp(PropKey.WEBDRIVER_FIREFOX_REMOTE_HUB));
         } catch (MalformedURLException e) {
-            throw new AutotestConfigException("Value of " + PropKey.WEBDRIVER_CHROME_REMOTE_HUB + " property is wrong. " +
+            throw new AutotestConfigException("Value of " + PropKey.WEBDRIVER_FIREFOX_REMOTE_HUB + " property is wrong. " +
                     "Details: " + e.getMessage(), e);
         }
-        capabilities = DesiredCapabilities.chrome();
+        capabilities = DesiredCapabilities.firefox();
         RemoteWebDriver driver = new RemoteWebDriver(url, capabilities);
         return driver;
     }
