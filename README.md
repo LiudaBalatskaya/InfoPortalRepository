@@ -7,7 +7,7 @@
 Or you can override values from `info-portal-auto\src\test\resources\test.properties` file.
 
 Example:
-`mvn clean test -Dselenide.base.url=https://info.issoft.by`
+`mvn clean test -Dselenide.base.url=https://info.issoft.by -Dbrowser=local_firefox`
 
 ## To generate Allure report:
 
