@@ -12,6 +12,6 @@ public class Configurator {
         baseUrl = Prop.getProp(PropKey.SELENIDE_BASE_URL);
 
         /* WebDriver config*/
-        WdConfig.setUp();
+        WdConfig.configure();
     }
 }

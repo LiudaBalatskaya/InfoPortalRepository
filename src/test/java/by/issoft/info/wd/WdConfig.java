@@ -11,7 +11,7 @@ public class WdConfig {
     private final static Logger LOGGER = LoggerFactory.getLogger(WdConfig.class);
 
 
-    public static void setUp() {
+    public static void configure() {
         LOGGER.info("-----------------------------------------");
         String browser = Prop.getProp(PropKey.BROWSER);
 
