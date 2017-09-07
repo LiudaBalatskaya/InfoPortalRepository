@@ -1,7 +1,6 @@
 package by.issoft.info.config;
 
 public class PropKey {
-    public static final String LOG4J_PROP_FILE = "log4j.prop.file";
     public static final String WEBDRIVER_GECKO_DRIVER = "webdriver.gecko.driver";
     public static final String WEBDRIVER_CHROME_DRIVER = "webdriver.chrome.driver";
     public static final String WEBDRIVER_CHROME_REMOTE_HUB = "webdriver.chrome.remote.hub";
