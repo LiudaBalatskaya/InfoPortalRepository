@@ -1,5 +1,8 @@
 package by.issoft.info.wd;
 
+import by.issoft.info.config.AutotestConfigException;
+import by.issoft.info.config.Prop;
+import by.issoft.info.config.PropKey;
 import com.codeborne.selenide.WebDriverProvider;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -11,11 +14,12 @@ import java.net.URL;
 public class ChromeRemoteWebDriverProvider implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities capabilities) {
-        URL url = null;
+        URL url;
         try {
-            url = new URL("http://localhost:4447/wd/hub");
+            url = new URL(Prop.getProp(PropKey.WEBDRIVER_CHROME_REMOTE_HUB));
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            throw new AutotestConfigException("Value of " + PropKey.WEBDRIVER_CHROME_REMOTE_HUB + " property is wrong. " +
+                    "Details: " + e.getMessage(), e);
         }
         capabilities = DesiredCapabilities.chrome();
         RemoteWebDriver driver = new RemoteWebDriver(url, capabilities);
