@@ -4,6 +4,11 @@
 
 * run `mvn clean test`
 
+Or you can override values from `info-portal-auto\src\test\resources\test.properties` file.
+
+Example:
+`mvn clean test -Dselenide.base.url=https://info.issoft.by`
+
 ## To generate Allure report:
 
 * run `mvn site`
