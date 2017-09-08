@@ -1,4 +1,12 @@
 # Info Portal Autotests
+Technologies:
+* Java 8
+* Maven 3.3.9+
+* Selenide
+* TestNG
+* Allure Test Report
+
+Code style file: `info-portal-auto\codestyle\GoogleStyleFork.xml` 
 
 ## To run tests:
 

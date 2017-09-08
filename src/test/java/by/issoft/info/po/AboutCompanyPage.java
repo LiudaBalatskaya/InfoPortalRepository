@@ -1,5 +1,5 @@
 package by.issoft.info.po;
 
-public class AboutPage {
+public class AboutCompanyPage {
     public static final String URL = "/about";
 }

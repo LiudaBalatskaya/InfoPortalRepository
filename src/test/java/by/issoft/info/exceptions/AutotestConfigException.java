@@ -1,4 +1,4 @@
-package by.issoft.info.config;
+package by.issoft.info.exceptions;
 
 public class AutotestConfigException extends RuntimeException {
     public AutotestConfigException(String message) {

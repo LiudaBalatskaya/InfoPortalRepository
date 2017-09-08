@@ -1,8 +1,8 @@
 package by.issoft.info.wd;
 
-import by.issoft.info.config.AutotestConfigException;
 import by.issoft.info.config.Prop;
 import by.issoft.info.config.PropKey;
+import by.issoft.info.exceptions.AutotestConfigException;
 import com.codeborne.selenide.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
