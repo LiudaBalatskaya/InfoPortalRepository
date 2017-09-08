@@ -7,6 +7,8 @@ import static org.testng.Assert.assertEquals;
 
 import by.issoft.info.po.AboutPage;
 import by.issoft.info.po.HomePage;
+import by.issoft.info.po.NewsPage;
+import by.issoft.info.po.TeamPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -21,20 +23,22 @@ public class CINFP393HeaderNavigationLinks extends BaseTest {
 
 
     @Test
-    public void checkAboutCompanyLink() {
-        homePage.getAboutCompanyMenu().click();
-        assertEquals(url(), baseUrl + AboutPage.URL, "'About company' ('О компании') menu link is wrong.");
+    public void verifyAboutCompanyHeaderLink() {
+        homePage.getAboutCompanyHeaderLink().click();
+        assertEquals(url(), baseUrl + AboutPage.URL, "'About company' ('О компании') header link is wrong");
     }
 
 
-    //    @Test
-    //    public void checkNewsLink() {
-    //
-    //    }
-    //
-    //
-    //    @Test
-    //    public void checkTeamLink() {
-    //
-    //    }
+    @Test
+    public void verifyNewsHeaderLink() {
+        homePage.getNewsHeaderLink().click();
+        assertEquals(url(), baseUrl + NewsPage.URL, "'News' ('Новости') header link is wrong");
+    }
+
+
+    @Test
+    public void verifyTeamHeaderLink() {
+        homePage.getTeamHeaderLink().click();
+        assertEquals(url(), baseUrl + TeamPage.URL, "'Team' ('Команда') header link is wrong");
+    }
 }
