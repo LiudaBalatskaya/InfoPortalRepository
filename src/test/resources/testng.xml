@@ -16,9 +16,4 @@
       <class name="by.issoft.info.tests.CINFP385LeftHeaderMenu"/>
     </classes>
   </test>
-  <test name="Experiment !!! Experiment">
-    <classes>
-      <class name="by.issoft.info.tests.ExperimentalInfoPortalTest"/>
-    </classes>
-  </test>
 </suite>

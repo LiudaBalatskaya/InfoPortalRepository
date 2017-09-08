@@ -4,12 +4,14 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
+import by.issoft.info.po.BonusesAndDiscountsPage;
 import by.issoft.info.po.GalleryPage;
 import by.issoft.info.po.HomePage;
 import by.issoft.info.po.HrBonusesPage;
 import by.issoft.info.po.InnovationCenterPage;
 import by.issoft.info.po.LeftHeaderMenu;
 import by.issoft.info.po.RulesPage;
+import by.issoft.info.po.SocialPackagePage;
 import by.issoft.info.po.SportPage;
 import by.issoft.info.po.TeamPage;
 import by.issoft.info.po.TrainingCenterPage;
@@ -31,7 +33,7 @@ public class CINFP385LeftHeaderMenu extends BaseTest {
 
     @Test()
     public void verifyQuantityOfMenuItem() {
-        Assert.assertEquals(leftHeaderMenu.getQuantityOfMenuItems(), 11, "Quantity of Left Header MEnu items is wrong");
+        Assert.assertEquals(leftHeaderMenu.getQuantityOfMenuItems(), 9, "Quantity of Left Header MEnu items is wrong");
     }
 
 
@@ -103,6 +105,26 @@ public class CINFP385LeftHeaderMenu extends BaseTest {
         softAssert.assertTrue(leftHeaderMenu.getRulesIcon().isDisplayed(), "Rules Icon is not displayed");
         leftHeaderMenu.getRulesLink().click();
         softAssert.assertEquals(url(), baseUrl + RulesPage.URL, RulesPage.class.getSimpleName() + " is not open");
+        softAssert.assertAll();
+    }
+
+
+    @Test()
+    public void verifySocialPackageMenuItem() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(leftHeaderMenu.getSocialPackageIcon().isDisplayed(), "SocialPackage Icon is not displayed");
+        leftHeaderMenu.getSocialPackageLink().click();
+        softAssert.assertEquals(url(), baseUrl + SocialPackagePage.URL, SocialPackagePage.class.getSimpleName() + " is not open");
+        softAssert.assertAll();
+    }
+
+
+    @Test()
+    public void verifyBonusesAndDiscountsMenuItem() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(leftHeaderMenu.getBonusesAndDiscountsIcon().isDisplayed(), "BonusesAndDiscounts Icon is not displayed");
+        leftHeaderMenu.getBonusesAndDiscountsLink().click();
+        softAssert.assertEquals(url(), baseUrl + BonusesAndDiscountsPage.URL, BonusesAndDiscountsPage.class.getSimpleName() + " is not open");
         softAssert.assertAll();
     }
 }

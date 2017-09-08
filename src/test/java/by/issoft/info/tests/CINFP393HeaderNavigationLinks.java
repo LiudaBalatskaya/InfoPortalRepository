@@ -27,13 +27,6 @@ public class CINFP393HeaderNavigationLinks extends BaseTest {
     }
 
 
-    @Test
-    public void checkAboutCompanyLink2222222222222222() {
-        homePage.getAboutCompanyMenu().click();
-        assertEquals(url(), baseUrl + AboutPage.URL + "2222222222", "'About company' ('О компании') menu link is wrong.");
-    }
-
-
     //    @Test
     //    public void checkNewsLink() {
     //

@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 
 public class LeftHeaderMenu {
     private static final By MENU = By.xpath("//ul[@class='tooltip-list']");
+    private static final By MENU_ITEMS = By.xpath("//ul[@class='tooltip-list']/li");
     private static final By GALLERY_LINK = By.xpath("//ul[@class='tooltip-list']//a[@href='/media']");
     private static final By GALLERY_ICON = By.xpath("//ul[@class='tooltip-list']//a[@href='/media']/i[@class='icon']");
     private static final By TRAINING_CENTER_LINK = By.xpath("//ul[@class='tooltip-list']//a[@href='/training-center']");
@@ -22,6 +23,10 @@ public class LeftHeaderMenu {
     private static final By TEAM_ICON = By.xpath("//ul[@class='tooltip-list']//a[@href='/team']/i[@class='icon']");
     private static final By RULES_LINK = By.xpath("//ul[@class='tooltip-list']//a[@href='/rules']");
     private static final By RULES_ICON = By.xpath("//ul[@class='tooltip-list']//a[@href='/rules']/i[@class='icon']");
+    private static final By SOCIAL_PACKAGE_LINK = By.xpath("//ul[@class='tooltip-list']//a[@href='/social-package']");
+    private static final By SOCIAL_PACKAGE_ICON = By.xpath("//ul[@class='tooltip-list']//a[@href='/social-package']/i[@class='icon']");
+    private static final By BONUSES_AND_DISCOUNTS_LINK = By.xpath("//ul[@class='tooltip-list']//a[@href='/bonuses-and-discounts']");
+    private static final By BONUSES_AND_DISCOUNTS_ICON = By.xpath("//ul[@class='tooltip-list']//a[@href='/bonuses-and-discounts']/i[@class='icon']");
 
 
     public boolean isMenuDisplayed() {
@@ -30,7 +35,7 @@ public class LeftHeaderMenu {
 
 
     public int getQuantityOfMenuItems() {
-        return $$(MENU).size();
+        return $$(MENU_ITEMS).size();
     }
 
 
@@ -101,5 +106,25 @@ public class LeftHeaderMenu {
 
     public SelenideElement getRulesLink() {
         return $(RULES_LINK);
+    }
+
+
+    public SelenideElement getSocialPackageIcon() {
+        return $(SOCIAL_PACKAGE_ICON);
+    }
+
+
+    public SelenideElement getSocialPackageLink() {
+        return $(SOCIAL_PACKAGE_LINK);
+    }
+
+
+    public SelenideElement getBonusesAndDiscountsIcon() {
+        return $(BONUSES_AND_DISCOUNTS_ICON);
+    }
+
+
+    public SelenideElement getBonusesAndDiscountsLink() {
+        return $(BONUSES_AND_DISCOUNTS_LINK);
     }
 }
