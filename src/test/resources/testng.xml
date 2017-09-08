@@ -16,4 +16,9 @@
       <class name="by.issoft.info.tests.CINFP385LeftHeaderMenu"/>
     </classes>
   </test>
+  <test name="CINFP-358 About Company Page">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP385LeftHeaderMenu"/>
+    </classes>
+  </test>
 </suite>
