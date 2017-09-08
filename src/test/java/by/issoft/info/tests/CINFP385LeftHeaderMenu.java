@@ -7,6 +7,7 @@ import static com.codeborne.selenide.WebDriverRunner.url;
 import by.issoft.info.po.GalleryPage;
 import by.issoft.info.po.HomePage;
 import by.issoft.info.po.LeftHeaderMenu;
+import by.issoft.info.po.TrainingCenterPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -28,6 +29,17 @@ public class CINFP385LeftHeaderMenu extends BaseTest {
         softAssert.assertTrue(leftHeaderMenu.getGalleryIcon().isDisplayed(), "Gallery Icon is not displayed");
         leftHeaderMenu.getGalleryLink().click();
         softAssert.assertEquals(url(), baseUrl + GalleryPage.URL, GalleryPage.class.getSimpleName() + " is not open");
+        softAssert.assertAll();
+    }
+
+
+    @Test()
+    public void verifyTrainingCenterMenuItem() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(leftHeaderMenu.getTrainingIcon().isDisplayed(), "Training Icon is not displayed");
+        leftHeaderMenu.getTrainingLink().click();
+        softAssert.assertEquals(url(), baseUrl + TrainingCenterPage.URL,
+                TrainingCenterPage.class.getSimpleName() + " is not open");
         softAssert.assertAll();
     }
 }
