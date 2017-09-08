@@ -1,5 +1,6 @@
 package by.issoft.info.config;
 
+import by.issoft.info.exceptions.AutotestConfigException;
 import by.issoft.info.tests.CINFP350HeaderComposition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

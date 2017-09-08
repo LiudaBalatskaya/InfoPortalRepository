@@ -11,6 +11,11 @@
       <class name="by.issoft.info.tests.CINFP393HeaderNavigationLinks"/>
     </classes>
   </test>
+  <test name="CINFP-385 Left Header Menu">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP385LeftHeaderMenu"/>
+    </classes>
+  </test>
   <test name="Experiment !!! Experiment">
     <classes>
       <class name="by.issoft.info.tests.ExperimentalInfoPortalTest"/>

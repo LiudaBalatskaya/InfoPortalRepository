@@ -26,4 +26,10 @@ public class HomePage {
     public SelenideElement getAboutCompanyMenu() {
         return $(ABOUT_COMPANY_MENU);
     }
+
+
+    public LeftHeaderMenu openLeftHeaderMenu() {
+        $(ISSOFT_LOGO).click();
+        return new LeftHeaderMenu();
+    }
 }
