@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.url;
 import static org.testng.Assert.assertEquals;
 
-import by.issoft.info.po.AboutPage;
+import by.issoft.info.po.AboutCompanyPage;
 import by.issoft.info.po.HomePage;
 import by.issoft.info.po.NewsPage;
 import by.issoft.info.po.TeamPage;
@@ -25,7 +25,7 @@ public class CINFP393HeaderNavigationLinks extends BaseTest {
     @Test
     public void verifyAboutCompanyHeaderLink() {
         homePage.getAboutCompanyHeaderLink().click();
-        assertEquals(url(), baseUrl + AboutPage.URL, "'About company' ('О компании') header link is wrong");
+        assertEquals(url(), baseUrl + AboutCompanyPage.URL, "'About company' ('О компании') header link is wrong");
     }
 
 
