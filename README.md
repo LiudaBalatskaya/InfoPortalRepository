@@ -1,5 +1,7 @@
 # Info Portal Autotests
+
 Technologies:
+
 * Java 8
 * Maven 3.3.9+
 * Selenide
