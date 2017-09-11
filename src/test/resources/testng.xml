@@ -21,4 +21,9 @@
       <class name="by.issoft.info.tests.CINFP385LeftHeaderMenu"/>
     </classes>
   </test>
+  <test name="CINFP359 News Page Header">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP359NewsPageHeader"/>
+    </classes>
+  </test>
 </suite>
