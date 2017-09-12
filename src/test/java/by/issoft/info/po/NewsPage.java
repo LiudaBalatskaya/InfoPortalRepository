@@ -52,17 +52,17 @@ public class NewsPage extends CommonPage {
 
 
     public String getNamesOfMonthList() {
-        String names = "";
+        StringBuilder names = new StringBuilder();
         ElementsCollection records = $$(MONTHS_LIST);
         for (SelenideElement record : records) {
-            names += record.getText() + " ";
+            names.append(record.getText()).append(" ");
         }
-        return names;
+        return names.toString();
     }
 
 
     public String getActiveNameOfMonthList() {
-        String monthString = null;
+        String monthString;
         Calendar now = Calendar.getInstance();
         int year_now = now.get(Calendar.YEAR);
         int year = Integer.parseInt($$(YEARS_LIST).get($$(YEARS_LIST).size() - 1).getText());
