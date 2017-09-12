@@ -16,21 +16,6 @@ public class NewsPage extends CommonPage {
     private static final By MONTHS_LIST = By.cssSelector(".legend-months li");
 
 
-    public SelenideElement getNewsHeaderLink() {
-        return $(NEWS_HEADER_LINK);
-    }
-
-
-    public SelenideElement getTeamHeaderLink() {
-        return $(TEAM_HEADER_LINK);
-    }
-
-
-    public SelenideElement getAboutCompanyHeaderLink() {
-        return $(ABOUT_COMPANY_HEADER_LINK);
-    }
-
-
     public SelenideElement getYearsList() {
         return $(YEARS_LIST);
     }
