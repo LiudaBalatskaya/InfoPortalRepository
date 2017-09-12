@@ -30,15 +30,14 @@ public class CINFP360NewsPageYears extends BaseTest {
 
 
     @Test()
-    public void checkYearsListAscendingOrder() {
-        Assert.assertTrue(newsPage.checkAscendingOrder(), "Year's list isn't ascending order");
+    public void verifyYearsListAscendingOrder() {
+        Assert.assertTrue(newsPage.isAscendingOrder(), "Year's list isn't ascending order");
     }
 
 
     @Test()
     public void verifyActiveYearOfList() {
-        Assert.assertTrue(newsPage.checkAscendingOrder(), "Year's list isn't ascending order");
-        Assert.assertEquals(newsPage.getAttributeOfLastYear(), "year active",
+        Assert.assertEquals(newsPage.getClassAttributeOfLastYear(), "year active",
                 "Last year of the list isn't active");
     }
 }

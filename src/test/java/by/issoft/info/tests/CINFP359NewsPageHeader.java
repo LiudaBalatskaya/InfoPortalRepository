@@ -2,7 +2,6 @@ package by.issoft.info.tests;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.title;
 import static com.codeborne.selenide.WebDriverRunner.url;
 import static org.testng.Assert.assertEquals;
 
@@ -31,8 +30,7 @@ public class CINFP359NewsPageHeader extends BaseTest {
 
     @Test
     public void verifyBracketedTitle() {
-        Assert.assertEquals(title(), "InfoPortal",
-                "Wrong " + NewsPage.class.getSimpleName() + " title. ");
+        Assert.assertEquals(newsPage.getBracketedTitle(), "ИНФО-ПОРТАЛ", " Bracketed title is wrong");
     }
 
 
