@@ -25,12 +25,12 @@ public class CINFP359NewsPageHeader extends BaseTest {
 
     @Test()
     public void verifyHeaderLogo() {
-        Assert.assertTrue(newsPage.getHeaderLogo().isDisplayed(), "Page Header Logo is wrong");
+        Assert.assertTrue(newsPage.getISsoftLogo().isDisplayed(), "ISsoft Logo isn't displayed");
     }
 
 
     @Test
-    public void verifyTitle() {
+    public void verifyBracketedTitle() {
         Assert.assertEquals(title(), "InfoPortal",
                 "Wrong " + NewsPage.class.getSimpleName() + " title. ");
     }
@@ -38,7 +38,7 @@ public class CINFP359NewsPageHeader extends BaseTest {
 
     @Test()
     public void verifyCoherentLogo() {
-        Assert.assertTrue(newsPage.getCoherentLogo().isDisplayed(), "Page Coherent Logo is wrong");
+        Assert.assertTrue(newsPage.getCoherentLogo().isDisplayed(), "Page Coherent Logo isn't displayed");
     }
 
 
@@ -58,6 +58,6 @@ public class CINFP359NewsPageHeader extends BaseTest {
 
     @Test
     public void verifyVisibleNewsHeaderLink() {
-        Assert.assertTrue(newsPage.getNewsHeaderLink().isDisplayed(), "'News' ('Новости') header link is wrong");
+        Assert.assertTrue(newsPage.getNewsHeaderLink().isDisplayed(), "'News' ('Новости') header link isn't displayed");
     }
 }
