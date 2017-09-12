@@ -9,27 +9,11 @@ import org.openqa.selenium.By;
 
 import java.util.Calendar;
 
-public class NewsPage {
+public class NewsPage extends CommonPage {
     public static final String URL = "/news";
 
-    private static final By ISSOFT_LOGO = By.xpath("//img[@class='issoft-logo']");
-    private static final By COHERENT_LOGO = By.xpath("//img[@class='issoft-coherent-logo']");
-    private static final By BRACKETED_TITLE = By.cssSelector(".page-title");
-
-    private static final By ABOUT_COMPANY_HEADER_LINK = By.xpath("//a[text()='О компании']");
-    private static final By NEWS_HEADER_LINK = By.xpath("//a[text()='Новости']");
-    private static final By TEAM_HEADER_LINK = By.xpath("//a[text()='Команда']");
     private static final By YEARS_LIST = By.cssSelector(".years-list li");
     private static final By MONTHS_LIST = By.cssSelector(".legend-months li");
-
-
-    public SelenideElement getISsoftLogo() { return $(ISSOFT_LOGO); }
-
-
-    public SelenideElement getCoherentLogo() { return $(COHERENT_LOGO); }
-
-
-    public String getBracketedTitle() { return $(BRACKETED_TITLE).getText(); }
 
 
     public SelenideElement getNewsHeaderLink() {
@@ -83,7 +67,7 @@ public class NewsPage {
 
 
     public String getNamesOfMonthList() {
-        String names = null;
+        String names = "";
         ElementsCollection records = $$(MONTHS_LIST);
         for (SelenideElement record : records) {
             names += record.getText() + " ";
@@ -93,18 +77,56 @@ public class NewsPage {
 
 
     public String getActiveNameOfMonthList() {
+        String monthString = null;
         Calendar now = Calendar.getInstance();
         int year_now = now.get(Calendar.YEAR);
-        int year = Integer.parseInt($$(YEARS_LIST).get($$(YEARS_LIST).size()).getText());
+        int year = Integer.parseInt($$(YEARS_LIST).get($$(YEARS_LIST).size() - 1).getText());
         if (year_now > year) {
-            return "Октябрь-Декабрь";
+            monthString = "Октябрь-Декабрь";
         } else {
             int month = now.get(Calendar.MONTH);
             switch (month) {
                 case 1:
+                    monthString = "Январь-Март";
+                    break;
+                case 2:
+                    monthString = "Январь-Март";
+                    break;
+                case 3:
+                    monthString = "Январь-Март";
+                    break;
+                case 4:
+                    monthString = "Апрель-Июнь";
+                    break;
+                case 5:
+                    monthString = "Апрель-Июнь";
+                    break;
+                case 6:
+                    monthString = "Апрель-Июнь";
+                    break;
+                case 7:
+                    monthString = "Июль-Сентябрь";
+                    break;
+                case 8:
+                    monthString = "Июль-Сентябрь";
+                    break;
+                case 9:
+                    monthString = "Июль-Сентябрь";
+                    break;
+                case 10:
+                    monthString = "Октябрь-Декабрь";
+                    break;
+                case 11:
+                    monthString = "Октябрь-Декабрь";
+                    break;
+                case 12:
+                    monthString = "Октябрь-Декабрь";
+                    break;
+                default:
+                    monthString = "";
                     break;
             }
-            return "";
         }
+        return monthString;
     }
 }

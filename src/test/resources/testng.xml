@@ -31,4 +31,9 @@
       <class name="by.issoft.info.tests.CINFP360NewsPageYears"/>
     </classes>
   </test>
+  <test name="CINFP-361 Months List Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP361MonthsListTest"/>
+    </classes>
+  </test>
 </suite>

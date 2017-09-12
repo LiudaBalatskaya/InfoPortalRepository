@@ -19,7 +19,7 @@ public class CINFP358AboutCompanyPage extends BaseTest {
 
     @Test()
     public void verifyPageHeader() {
-        Assert.assertTrue(aboutCompanyPage.getHeaderLogo().isDisplayed(), "Page Header is wrong");
+        Assert.assertTrue(aboutCompanyPage.getISsoftLogo().isDisplayed(), "Page Header is wrong");
     }
 
 

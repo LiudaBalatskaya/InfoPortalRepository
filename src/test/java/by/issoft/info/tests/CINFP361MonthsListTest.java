@@ -35,4 +35,11 @@ public class CINFP361MonthsListTest extends BaseTest {
         String names = newsPage.getNamesOfMonthList();
         Assert.assertTrue(names.contentEquals("Январь-Март Апрель-Июнь Июль-Сентябрь Октябрь-Декабрь "), "Names of months on the list are wrong");
     }
+
+
+    @Test()
+    public void verifyActiveNameOfMonthList() {
+        String name = newsPage.getActiveNameOfMonthList();
+        Assert.assertTrue(name.contentEquals("Октябрь-Декабрь"), "Active name of month List is wrong");
+    }
 }
