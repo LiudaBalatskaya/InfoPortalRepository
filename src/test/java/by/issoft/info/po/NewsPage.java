@@ -2,6 +2,9 @@ package by.issoft.info.po;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.navigator;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.url;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -14,6 +17,9 @@ public class NewsPage extends CommonPage {
 
     private static final By YEARS_LIST = By.cssSelector(".years-list li");
     private static final By MONTHS_LIST = By.cssSelector(".legend-months li");
+    private static final By NEWS_LIST = By.cssSelector("ul.news-list li");
+    private static final By NEWS_BANNER = By.cssSelector(".news-banner");
+    private static final By BANNER_TEXT = By.cssSelector(".banner-text");
 
 
     public SelenideElement getYearsList() {
@@ -23,6 +29,11 @@ public class NewsPage extends CommonPage {
 
     public SelenideElement getMonthsList() {
         return $(MONTHS_LIST);
+    }
+
+
+    public SelenideElement getNewsList() {
+        return $(NEWS_LIST);
     }
 
 
@@ -114,4 +125,101 @@ public class NewsPage extends CommonPage {
         }
         return monthString;
     }
+
+
+    public boolean getHeadingOfEachNews() {
+        By element = By.cssSelector("h2");
+        if (!getInformationOfEachNews(element, 1)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    public boolean getDescriptionOfEachNews() {
+        By element = By.cssSelector("p");
+        if (!getInformationOfEachNews(element, 1)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    public boolean getDateOfEachNews() {
+        By ELEMENT = By.cssSelector(".news-date");
+        if (!getInformationOfEachNews(ELEMENT, 1)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    public boolean getImageOfEachNews() {
+        By ELEMENT = By.cssSelector(".news-image");
+        if (!getInformationOfEachNews(ELEMENT, 2)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    public boolean getLinkOfEachNews() {
+        By element = By.cssSelector("a.block-link");
+        if (!getInformationOfEachNews(element, 3)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    public boolean getInformationOfEachNews(By element, int flag) {
+        ElementsCollection records = $$(NEWS_LIST);
+        String text = "";
+        String bannerText = "";
+        By elementOfArticleHeaderText = By.cssSelector("h2");
+
+        for (SelenideElement record : records) {
+
+            switch (flag) {
+                case 1:
+                    text = record.$(element).getText();
+                    if (text.isEmpty()) {
+                        return false;
+                    }
+                    break;
+                case 2:
+                    if (!record.$(element).isDisplayed()) {
+                        return false;
+                    }
+                    ;
+                    break;
+                case 3:
+                    text = record.$(elementOfArticleHeaderText).getText().toLowerCase();
+                    record.$(element).click();
+                    navigator.open(url());
+                    bannerText = $(BANNER_TEXT).getText().toLowerCase();
+                    if (!text.contentEquals(bannerText)) {
+                        return false;
+                    }
+                    open(NewsPage.URL, NewsPage.class);
+                    ;
+                    break;
+            }
+        }
+        return true;
+    }
+/*
+    public NewsArticlePage clickOnArticle(int number) {
+        ElementsCollection records = $$(NEWS_LIST);
+        records.get(number).
+
+        return new NewsArticlePage();
+    }
+
+    public String getArticleNameText(int number) {
+        ElementsCollection records = $$(NEWS_LIST);
+        By elementOfArticleHeaderText = By.cssSelector("h2"); //TODO move up
+        String text = records.get(number).$(elementOfArticleHeaderText).getText().toLowerCase();
+    }
+*/
 }
