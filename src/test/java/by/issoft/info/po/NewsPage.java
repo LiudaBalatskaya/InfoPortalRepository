@@ -4,11 +4,14 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.navigator;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.url;
+import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 import java.util.Calendar;
 
@@ -17,9 +20,46 @@ public class NewsPage extends CommonPage {
 
     private static final By YEARS_LIST = By.cssSelector(".years-list li");
     private static final By MONTHS_LIST = By.cssSelector(".legend-months li");
-    private static final By NEWS_LIST = By.cssSelector("ul.news-list li");
-    private static final By NEWS_BANNER = By.cssSelector(".news-banner");
-    private static final By BANNER_TEXT = By.cssSelector(".banner-text");
+    private static final By NEWS_LIST = By.cssSelector("ul.news-list>li");
+    private static final By NEWS_HEADER = By.cssSelector("h2");
+    private static final By NEWS_DESCRIPTION = By.cssSelector("h2");
+    private static final By NEWS_DATE = By.cssSelector(".news-date");
+    private static final By NEWS_IMAGE = By.cssSelector(".news-image");
+    private static final By NEWS_LINK = By.cssSelector("a.block-link");
+    private static final By NEXT_BUTTON = By.xpath("//ip-news-slider//button[2]");
+    private static final By PREVIOS_BUTTON = By.xpath("//ip-news-slider//button[1]");
+    private static final By ACTIVE_SLIDE = By.cssSelector("ip-news-slider div.home-page-event-slide.slide.slick-slide.slick-current.slick-active");
+    private static final By EVENT_TITLE = By.cssSelector("div.event-title");
+
+
+    public SelenideElement getActiveSlide() {
+        return $(ACTIVE_SLIDE);
+    }
+
+
+    public String getTitleOfActiveSlide() {
+        return $(ACTIVE_SLIDE).$(EVENT_TITLE).getText();
+    }
+
+
+    public SelenideElement getNextButton() {
+        return $(NEXT_BUTTON);
+    }
+
+
+    public void clickNextButton() {
+        $(NEXT_BUTTON).click();
+    }
+
+
+    public SelenideElement getPreviousButton() {
+        return $(PREVIOS_BUTTON);
+    }
+
+
+    public void clickPreviousButton() {
+        $(PREVIOS_BUTTON).click();
+    }
 
 
     public SelenideElement getYearsList() {
@@ -127,99 +167,102 @@ public class NewsPage extends CommonPage {
     }
 
 
-    public boolean getHeadingOfEachNews() {
-        By element = By.cssSelector("h2");
-        if (!getInformationOfEachNews(element, 1)) {
+    public boolean isVisibleHeadingsOfNews() {
+        if (!isVisibleInformationOfEachNews(NEWS_HEADER, "string")) {
             return false;
         }
         return true;
     }
 
 
-    public boolean getDescriptionOfEachNews() {
-        By element = By.cssSelector("p");
-        if (!getInformationOfEachNews(element, 1)) {
+    public boolean isVisibleDescriptionsOfNews() {
+        if (!isVisibleInformationOfEachNews(NEWS_DESCRIPTION, "string")) {
+
             return false;
         }
         return true;
     }
 
 
-    public boolean getDateOfEachNews() {
-        By ELEMENT = By.cssSelector(".news-date");
-        if (!getInformationOfEachNews(ELEMENT, 1)) {
+    public boolean isVisibleDatesOfNews() {
+        if (!isVisibleInformationOfEachNews(NEWS_DATE, "string")) {
             return false;
         }
         return true;
     }
 
 
-    public boolean getImageOfEachNews() {
-        By ELEMENT = By.cssSelector(".news-image");
-        if (!getInformationOfEachNews(ELEMENT, 2)) {
+    public boolean isVisibleImagesOfNews() {
+        if (!isVisibleInformationOfEachNews(NEWS_IMAGE, "image")) {
             return false;
         }
         return true;
     }
 
 
-    public boolean getLinkOfEachNews() {
-        By element = By.cssSelector("a.block-link");
-        if (!getInformationOfEachNews(element, 3)) {
+    public boolean isActiveLinksOfNews() {
+
+        // WebDriver driver = getWebDriver();
+        // JavascriptExecutor js = (JavascriptExecutor) driver;
+        // js.executeScript("document.body.style.zoom='80%'");
+
+        if (!isVisibleInformationOfEachNews(NEWS_LINK, "link")) {
             return false;
         }
         return true;
     }
 
 
-    public boolean getInformationOfEachNews(By element, int flag) {
+    public boolean isVisibleInformationOfEachNews(By element, String visibleElement) {
         ElementsCollection records = $$(NEWS_LIST);
         String text = "";
         String bannerText = "";
-        By elementOfArticleHeaderText = By.cssSelector("h2");
+        String articleUrl;
+        int i = 0;
+        int k = records.size();
+        LOGGER.info("Size of records = " + k);
+        boolean findElement = true;
+        NewsArticlePage articlePage = new NewsArticlePage();
 
         for (SelenideElement record : records) {
-
-            switch (flag) {
-                case 1:
+            i++;
+            LOGGER.info("Number of record = " + i);
+            switch (visibleElement) {
+                case "string":
                     text = record.$(element).getText();
                     if (text.isEmpty()) {
-                        return false;
+                        findElement = false;
                     }
                     break;
-                case 2:
+                case "image":
                     if (!record.$(element).isDisplayed()) {
-                        return false;
+                        findElement = false;
                     }
                     ;
                     break;
-                case 3:
-                    text = record.$(elementOfArticleHeaderText).getText().toLowerCase();
-                    record.$(element).click();
-                    navigator.open(url());
-                    bannerText = $(BANNER_TEXT).getText().toLowerCase();
-                    if (!text.contentEquals(bannerText)) {
-                        return false;
+                case "link":
+                    if (i > 3) {
+                        getBody().sendKeys(Keys.PAGE_DOWN);
+                        sleep(2000);
                     }
+                    record.$(element).click();
+                    articleUrl = url().toString();
+                    navigator.open(articleUrl);
+                    LOGGER.info("After navigator articleUrl = " + articleUrl);
+                    bannerText = articlePage.getBannerText().toLowerCase();
                     open(NewsPage.URL, NewsPage.class);
+                    sleep(2000);
+                    LOGGER.info("back on the news page ");
+                    text = record.$(NEWS_HEADER).getText().toLowerCase();
+                    LOGGER.info("text = " + i + " " + text);
+                    if (!text.contentEquals(bannerText)) {
+                        findElement = false;
+                    }
+
                     ;
                     break;
             }
         }
-        return true;
+        return findElement;
     }
-/*
-    public NewsArticlePage clickOnArticle(int number) {
-        ElementsCollection records = $$(NEWS_LIST);
-        records.get(number).
-
-        return new NewsArticlePage();
-    }
-
-    public String getArticleNameText(int number) {
-        ElementsCollection records = $$(NEWS_LIST);
-        By elementOfArticleHeaderText = By.cssSelector("h2"); //TODO move up
-        String text = records.get(number).$(elementOfArticleHeaderText).getText().toLowerCase();
-    }
-*/
 }

@@ -24,32 +24,31 @@ public class CINFP362NewsListTest extends BaseTest {
 
 
     @Test
-    public void verifyVisibleHeadingOfEachNews() {
-        Assert.assertTrue(newsPage.getHeadingOfEachNews(), "Not all news visible  have visible heading");
+    public void verifyVisibleHeadingsOfNews() {
+        Assert.assertTrue(newsPage.isVisibleHeadingsOfNews(), "Not all news visible  have visible heading");
     }
 
 
     @Test
-    public void verifyVisibleDescriptionOfEachNews() {
-        Assert.assertTrue(newsPage.getDescriptionOfEachNews(), "Not all news have visible brief description");
+    public void verifyVisibleDescriptionsOfNews() {
+        Assert.assertTrue(newsPage.isVisibleDescriptionsOfNews(), "Not all news have visible brief description");
     }
 
 
     @Test
-    public void verifyVisibleDateOfEachNews() {
-        Assert.assertTrue(newsPage.getDateOfEachNews(), "Not all news have visible news date");
+    public void verifyVisibleDatesOfNews() {
+        Assert.assertTrue(newsPage.isVisibleDatesOfNews(), "Not all news have visible news date");
     }
 
 
     @Test
-    public void verifyVisibleImageOfEachNews() {
-        Assert.assertTrue(newsPage.getImageOfEachNews(), "Not all news have visible image");
+    public void verifyVisibleImagesOfNews() {
+        Assert.assertTrue(newsPage.isVisibleImagesOfNews(), "Not all news have visible image");
     }
 
 
     @Test
-    public void verifyActiveLinkOfEachNews() {
-
-        Assert.assertTrue(newsPage.getLinkOfEachNews(), "Not all news have active link");
+    public void verifyActiveLinksNews() {
+        Assert.assertTrue(newsPage.isActiveLinksOfNews(), "Not all news have active link");
     }
 }

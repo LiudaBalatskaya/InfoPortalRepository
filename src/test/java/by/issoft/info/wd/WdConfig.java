@@ -22,6 +22,10 @@ public class WdConfig {
                     System.setProperty("webdriver.chrome.driver", Prop.getProp(PropKey.WEBDRIVER_CHROME_DRIVER));
                 }
                 Configuration.browser = "chrome";
+                Configuration.startMaximized = true;
+                // Configuration.browserSize = "1400x1050";
+                Configuration.browserSize = "1440x900";
+                //  Configuration.browserSize = "1440x900";
                 break;
 
             case "local_firefox":

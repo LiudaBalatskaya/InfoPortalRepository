@@ -41,4 +41,39 @@
       <class name="by.issoft.info.tests.CINFP362NewsListTest"/>
     </classes>
   </test>
+  <test name="CINFP-363 News Slider Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP363NewsSliderTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-364 News Feedback Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP364NewsFeedbackTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-365 Team Page Header">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP365TeamPageHeader"/>
+    </classes>
+  </test>
+  <test name="CINFP-366 Team Page Menu Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP366TeamPageMenuTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-367 Issoft Operations Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP367IssoftOperationsTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-368 Issoft Admin Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP368IssoftAdminTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-380 Sport Page Header Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP380SportPageHeaderTest"/>
+    </classes>
+  </test>
 </suite>
