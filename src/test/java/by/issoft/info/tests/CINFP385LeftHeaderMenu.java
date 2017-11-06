@@ -4,7 +4,7 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
-import by.issoft.info.po.BonusesAndDiscountsPage;
+import by.issoft.info.po.BonusesDiscountsPage;
 import by.issoft.info.po.GalleryPage;
 import by.issoft.info.po.HomePage;
 import by.issoft.info.po.HrBonusesPage;
@@ -124,7 +124,7 @@ public class CINFP385LeftHeaderMenu extends BaseTest {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(leftHeaderMenu.getBonusesAndDiscountsIcon().isDisplayed(), "BonusesAndDiscounts Icon is not displayed");
         leftHeaderMenu.getBonusesAndDiscountsLink().click();
-        softAssert.assertEquals(url(), baseUrl + BonusesAndDiscountsPage.URL, BonusesAndDiscountsPage.class.getSimpleName() + " is not open");
+        softAssert.assertEquals(url(), baseUrl + BonusesDiscountsPage.URL, BonusesDiscountsPage.class.getSimpleName() + " is not open");
         softAssert.assertAll();
     }
 }

@@ -25,10 +25,8 @@ public class CINFP369CoherentSolutionsTest extends BaseTest {
 
         driver.get("http://info-portal.dev.coherentprojects.net/team");
         teamPage = open(TeamPage.URL, TeamPage.class);
-        // teamPage = new TeamPage();
         teamPage.getItemCoherentSolutions().click();
         String currentURL = url();
-        //coherentPage = open(CoherentSolutionsPage.URL, CoherentSolutionsPage.class);
         coherentPage = new CoherentSolutionsPage();
     }
 

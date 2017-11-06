@@ -31,7 +31,6 @@ public class NewsPage extends CommonPage {
     private static final By ACTIVE_SLIDE = By.cssSelector("ip-news-slider div.home-page-event-slide.slide.slick-slide.slick-current.slick-active");
     private static final By EVENT_TITLE = By.cssSelector("div.event-title");
 
-
     public SelenideElement getActiveSlide() {
         return $(ACTIVE_SLIDE);
     }

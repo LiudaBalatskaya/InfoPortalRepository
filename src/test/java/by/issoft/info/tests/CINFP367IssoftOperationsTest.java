@@ -118,7 +118,7 @@ public class CINFP367IssoftOperationsTest extends BaseTest {
 
     @Test()
     public void verifyActiveLinkQADepartment() {
-        teamPage.getLinkTrainingCenter();
+        teamPage.getLinkQADepartment();
         IndividualPage individualPage = new IndividualPage();
         Assert.assertEquals($(individualPage.FULL_NAME).getText(), "Lepeshko, Marina", "Link from QA Department block is wrong");
         getWebDriver().switchTo().window(teamPage.winHandlePage);
@@ -170,7 +170,7 @@ public class CINFP367IssoftOperationsTest extends BaseTest {
     public void verifyActiveLinkCareerDevelopment() {
         teamPage.getLinkCareerDevelopment();
         IndividualPage individualPage = new IndividualPage();
-        Assert.assertEquals($(individualPage.FULL_NAME).getText(), "Sinkevich, Eugen", "Link from Career Development block is wrong");
+        Assert.assertEquals($(individualPage.FULL_NAME).getText(), "Yurevich, Andrei", "Link from Career Development block is wrong");
         getWebDriver().switchTo().window(teamPage.winHandlePage);
     }
 

@@ -24,8 +24,9 @@ public class WdConfig {
                 Configuration.browser = "chrome";
                 Configuration.startMaximized = true;
                 // Configuration.browserSize = "1400x1050";
-                Configuration.browserSize = "1440x900";
+                // Configuration.browserSize = "1440x900"; // for News Page and others
                 //  Configuration.browserSize = "1440x900";
+                Configuration.browserSize = "1600x900";  // for sport tests link
                 break;
 
             case "local_firefox":

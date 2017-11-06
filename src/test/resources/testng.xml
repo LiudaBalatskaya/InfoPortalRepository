@@ -76,4 +76,176 @@
       <class name="by.issoft.info.tests.CINFP380SportPageHeaderTest"/>
     </classes>
   </test>
+  <test name="CINFP-381 Sport Section Content Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP381SportSectionContentTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-387 Sport News Section Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP387SportNewsSectionTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-388 Sport Page Feedback Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP388SportPageFeedbackTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-389 Sport News Links Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP389SportNewsLinksTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-407 Pool Section's Cost Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP407PoolSectionsCostTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-408 Pool Section Skype Date Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP408PoolSkypeDateTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-372 Training Center Header Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP372TrainingCenterHeaderTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-373 Content Training Center Test">
+  <classes>
+    <class name="by.issoft.info.tests.CINFP373ContentTrainingCenterTest"/>
+  </classes>
+  </test>
+  <test name="CINFP-375 Yammer Group Link Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP375YammerGroupLinkTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-376 Write To Training Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP376WriteToTrainingTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-378 News Block Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP378NewsBlockTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-379 News Block Links Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP379NewsBlockLinksTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-392 CINFP392 Menubar Rules Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP392MenubarRulesTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-394 Days Schedule Rules Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP394DaysScheduleRulesTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-395 Work Hours Rules Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP395WorkHoursRulesTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-394 Days Schedule Rules Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP394DaysScheduleRulesTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-396 Croup Manager Rules Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP396CroupManagerRulesTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-397 Lunch Rules Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP397LunchRulesTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-398 Relaxing Rules Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP398RelaxingRulesTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-399 Equipment Rules Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP399EquipmentRulesTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-400 Vacation Rules Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP400VacationRulesTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-401 Accountant Department Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP401AccountantDepartmentTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-402 Help Desk Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP402HelpDeskTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-412 Header Rules Page Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP412HeaderRulesPageTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-356 Home Card Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP356HomeCardTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-382 News Cards Home Page">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP382NewsCardsHomePage"/>
+    </classes>
+  </test>
+  <test name="CINFP-383 Bottom Card Row Home Page Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP383BottomCardRowHomePageTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-384 Footer Row Home Page">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP384FooterRowHomePage"/>
+    </classes>
+  </test>
+  <test name="CINFP-403 Social Package Header Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP403SocialPackageHeaderTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-404 Social Package Content Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP404SocialPackageContentTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-414 Health Insurance Modal Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP414HealthInsuranceModalTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-415 English Language Modal Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP415EnglishLanguageModalTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-417 Innovation Center Header Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP417InnovationCenterHeaderTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-418 Innovation Center Content Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP418InnovationCenterContentTest"/>
+    </classes>
+  </test>
 </suite>
+
+

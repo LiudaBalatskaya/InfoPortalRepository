@@ -7,14 +7,14 @@ import static com.codeborne.selenide.Selenide.sleep;
 import by.issoft.info.po.NewsPage;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class CINFP363NewsSliderTest extends BaseTest {
     private static NewsPage newsPage;
 
 
-    @BeforeClass
+    @BeforeMethod
     public void openPage() {
         newsPage = open(NewsPage.URL, NewsPage.class);
     }
@@ -54,12 +54,11 @@ public class CINFP363NewsSliderTest extends BaseTest {
 
     @Test
     public void verifySlideNewsAfterClickPrevious() {
-        String eventTitle = newsPage.getTitleOfActiveSlide();
+        String curentTitle = newsPage.getTitleOfActiveSlide();
         newsPage.getBody().sendKeys(Keys.PAGE_DOWN);
         newsPage.clickPreviousButton();
-        sleep(2000);
-        newsPage.getBody().sendKeys(Keys.PAGE_UP);
-        sleep(2000);
-        Assert.assertNotEquals(newsPage.getTitleOfActiveSlide(), eventTitle, "Slide was not change after click the button Previous");
+        sleep(3000);
+        String previousTitle = newsPage.getTitleOfActiveSlide();
+        Assert.assertNotEquals(previousTitle, curentTitle, "Slide was not change after click the button Previous");
     }
 }

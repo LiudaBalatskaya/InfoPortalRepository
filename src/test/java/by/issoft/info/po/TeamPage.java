@@ -136,6 +136,9 @@ public class TeamPage extends CommonPage {
         switchToIndividualPage(LINK_TRAINING_CENTER);
     }
 
+    public void getLinkQADepartment() {
+        switchToIndividualPage(LINK_QA_DEPARTMENT);
+    }
 
     public SelenideElement getSectionNameQADepartment() {
         return $(QA_DEPARTMENT);
