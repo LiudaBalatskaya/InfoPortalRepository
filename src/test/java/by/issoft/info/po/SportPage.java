@@ -18,11 +18,7 @@ public class SportPage extends CommonPage {
 
     private static final By NEWS_HEADER = By.cssSelector("h2.news-title");
     private static final By BLOCK_NEWS = By.cssSelector(".block-title");
-    private static final By NEWS_ITEM = By.cssSelector(".news-item");
-    private static final By MONTH_LABEL = By.cssSelector(".month-label");
-    private static final By RULE_NUMBERS = By.cssSelector(".rule-number");
     private static final By NEWS_LINK = By.cssSelector("a.news-title");
-    private static final By ALL_NEWS = By.cssSelector(".all-news-link>a");
     private static final By NEWS_CONTENT = By.cssSelector(".news-content");
     private static final By NEWS_LIST = By.xpath("//ip-newslist//a");
     private static final By SECTIONS_NAMES = By.cssSelector(".activity-title");
@@ -52,13 +48,11 @@ public class SportPage extends CommonPage {
     private static final By POOL_MANAGER_LINK = By.xpath("//div[4]/div[2]/ul/li//a[2]");
     private static final By POOL_MANAGER_NAME = By.xpath("//div[4]/div[2]/ul/li//a[1]");
 
+
     public String getNewsHeader() { return $(NEWS_HEADER).getText(); }
 
 
     public SelenideElement getNewsBlock() { return $(BLOCK_NEWS); }
-
-
-    public SelenideElement getAllNews() { return $(ALL_NEWS); }
 
 
     public int getCountNewsItem() {
@@ -69,12 +63,11 @@ public class SportPage extends CommonPage {
 
 
     public boolean isMonthNewsItems() {
-        String month;
         ElementsCollection records = $$(NEWS_ITEM);
-
         for (SelenideElement record : records) {
-            month = record.$(MONTH_LABEL).getText();
-            if(!isMonthFound(month)){ break;};
+            if (!isMonthNewsItem(record)) {
+                return false;
+            }
         }
         return true;
     }
@@ -87,14 +80,11 @@ public class SportPage extends CommonPage {
         ElementsCollection records = $$(RULE_NUMBERS);
 
         for (SelenideElement record : records) {
-            if (Integer.parseInt(record.getText()) > 0) {
-                correctly = true;
-            } else {
-                correctly = false;
-                break;
+            if (!(Integer.parseInt(record.getText()) > 0)) {
+                return false;
             }
         }
-        return correctly;
+        return true;
     }
 
 
@@ -498,6 +488,7 @@ public class SportPage extends CommonPage {
 
         return correct;
     }
+
 
     public boolean isVisiblePollManagerInformation() {
         String name, link;

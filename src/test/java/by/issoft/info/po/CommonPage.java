@@ -21,6 +21,11 @@ public class CommonPage {
     private static final By FEEDBACK_BUTTON = By.cssSelector(".button.secondary-button-color");
     protected static final By DEPARTMENTS = By.cssSelector(".person-description");
     protected static final By NAVIGATION_LINK_ACTIVE = By.cssSelector(".navigation-link.router-link-active");
+    protected static final By NAVIGATION_INNOVATION_ACTIVE = By.cssSelector(".active-project>h1");
+    private static final By MONTH_LABEL = By.cssSelector(".month-label");
+    public static final By NEWS_ITEM = By.cssSelector(".news-item");
+    public static final By RULE_NUMBERS = By.cssSelector(".rule-number");
+    public static final By ALL_NEWS = By.cssSelector(".all-news-link>a");
 
     public String winHandlePage;
     public String toDepartmentItem = "";
@@ -59,11 +64,23 @@ public class CommonPage {
         return false;
     }
 
+    public boolean isMonthNewsItem(SelenideElement record) {
+
+        return isMonthFound(record.$(MONTH_LABEL).getText());
+    }
+
+    public boolean isRuleNumberOfNews(SelenideElement record) {
+        if (Integer.parseInt(record.$(RULE_NUMBERS).getText()) > 0) { return true;}
+        return false;
+    }
 
     public WebDriver getDriver() {
         return getWebDriver();
     }
 
+    public SelenideElement getInnovationActiveHeader() {
+        return $(NAVIGATION_INNOVATION_ACTIVE);
+    }
 
     public SelenideElement getISsoftLogo() {
         return $(ISSOFT_LOGO);
@@ -125,5 +142,7 @@ public class CommonPage {
         sleep(2000);
 
     }
+
+    public SelenideElement getAllNews() { return $(ALL_NEWS); }
 
 }

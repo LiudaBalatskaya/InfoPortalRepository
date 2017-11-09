@@ -246,6 +246,46 @@
       <class name="by.issoft.info.tests.CINFP418InnovationCenterContentTest"/>
     </classes>
   </test>
+  <test name="CINFP-419 Active Projects Innovation Center Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP419ActiveProjectsInnovationCenterTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-420 Developments Innovative Center Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP420DevelopmentsInnovationCenterTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-421 Bottom Section Innovation Center Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP421BottomSectionInnovationCenterTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-422 News Innovation Center Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP422NewsInnovationCenterTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-423 Header HR Bonus Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP423HeaderHRBonusTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-424 Content HR Bonus Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP424ContentHRBonusTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-425 Vacancy HR Bonus Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP425VacancyHRBonusTest"/>
+    </classes>
+  </test>
+  <test name="CINFP-426 Feedback Bonus Test">
+    <classes>
+      <class name="by.issoft.info.tests.CINFP426FeedbackBonusTest"/>
+    </classes>
+  </test>
 </suite>
 
 
